@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{% block title %}Tomorrow p'tit dej{% endblock title %}</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel='stylesheet' href="{% static 'css/base.css' %}"
+</head>
+
+<body> 
+    {% block css %} 
+    {% endblock css %}
+    <main class="container">
+        {% block header %}
+            {% include "header.html" %}
+        {% endblock header %}
+
+        {% block content %}
+        {% endblock content %}
+
+        {% block footer %}
+            {% include "footer.html" %}
+        {% endblock footer %}
+    </main>
+</body>
+</html>

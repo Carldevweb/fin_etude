@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Victimes</h2>
+<div class="grid">
+  {% for victime in victimes %}
+  <article>
+    {% if victime.picture %}
+    <img class="img" src="{{ victime.picture.url }}" alt="Tomorrow staff ">
+    {% endif %}
+    <h3>{{ victime.user.first_name }}</h3>
+    <p>{{ victime.nb_attaque }}</p>
+  </article>
+  {% endfor %}  
+</div>
+
+<table>
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Nom</th>
+        <th scope="col">Attaque</th>
+        <th scope="col">Victime</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for score in scores %}
+      <tr>
+        <th scope="row"></th>
+        <td>{{ score.attacker }}</td>
+        <td>{{ score.type_attack }}</td>
+        <td>{{ score.victim }}</td>
+        <td>{{ score.created_at }}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endblock content %}
+

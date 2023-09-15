@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}{% endblock header %}
+{% block content %}
+<article data-theme="dark" aria-label="Forced light theme example">
+  <h3>Connection</h3>
+  <form method="post">  
+    {% csrf_token %}
+    <input type="text" name="username" placehloder="Nom"  aria-label="name" autocomplete="nickname" required="required">
+    <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required="required"> 
+    <button type="submit" aria-label="Example button" >Valider</button>
+  </form>
+</article>
+    
+{% endblock content %}
+
+{% block footer %}{% endblock footer %}

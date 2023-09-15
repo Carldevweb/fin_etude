@@ -1,0 +1,21 @@
+{% load static %}
+
+<header>
+    <div class="grid">
+        <nav>
+            <ul>
+            <li> <img src="{% static 'logo_TomorrowTech.png' %}" alt="Logo Tomorrow tech"> </li>
+            </ul>
+            <ul>
+            <li><a href="{% url 'home' %}">Accueil</a></li>
+            <li><a href="{% url 'team' %}">Equipe</a></li>
+            <li><a href="{% url 'palmeOr' %}">Palme d'or</a></li>
+            <li><a href="{% url 'palmeDej' %}">Palme petit déj</a></li>
+            <li><a href="{% url 'victim' %}">victime</a></li>
+            <li><a href="{% url 'offrandes' %}">offrandes</a></li>
+            <li><a href="{% url 'account' %}">Compte</a></li>
+            <li><a href="{% url 'login' %}">deconnection</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

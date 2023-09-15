@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h2>Tomorrow staff</h2>
+<div class="grid">
+  {% for staff in staffs %}
+  <article class="col-3">
+    {% if staff.picture %}
+      <img class="img" src="{{ staff.picture.url }}" alt="Tomorrow staff ">
+    {% endif %}
+    <h3>{{ staff.user.first_name }}</h3>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

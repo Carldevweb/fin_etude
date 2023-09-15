@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h2> Meilleurs Participants </h2>
+<div class="grid">
+  {% for top_attaquant in top_attaquants %}
+  <article>
+    {% if top_attaquant.picture %}
+    <img class="img" src="{{ top_attaquant.picture.url }}" alt="Tomorrow staff ">
+    {% endif %}
+    <h3>{{ top_attaquant.user.first_name }}</h3>
+    <h3>{{ top_attaquant.nb_attaque }}</h3>
+  </article>
+  {% endfor %}
+</div>
+
+<table>
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Nom</th>
+        <th scope="col">Attaque</th>
+        <th scope="col">Victime</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for attaque in attaques %}
+      <tr>
+        <th scope="row"></th>
+        <td>{{ attaque.attacker }}</td>
+        <td>{{ attaque.type_attack }}</td>
+        <td>{{ attaque.victim }}</td>
+        <td>{{ attaque.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
+

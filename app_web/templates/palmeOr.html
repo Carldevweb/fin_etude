@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2> Palme d'or </h2>
+<div class="grid">
+  {% for staff in staffs %}
+  <article>
+  {% if staff.attacker.picture %}
+  <img class="img" src="{{ staff.attacker.picture.url }}" alt="Tomorrow team">
+  {% endif %}
+  <h3>{{ staff.attacker.user.first_name }}</h3>
+  <h3>{{ staff.nb_attaque }}</h3>
+  </article>
+  {% endfor %}
+</div>
+
+<table>
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Type_attaque</th>
+        <th scope="col">Victime</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for attack in scores %}
+      <tr>        
+        <th scope="row"></th>
+        <td>{{ attack.type_attack }}</td>
+        <td>{{ attack.victim }}</td>
+        <td>{{ attack.created_at }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
+

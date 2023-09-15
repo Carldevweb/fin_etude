@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <h1>Liste des offrandes</h1>
+<table>
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Nom</th>
+        <th scope="col">Victime</th>
+        <th scope="col">Date</th>
+        <th scope="col">offrandes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for staff in consomables %}
+      <tr>
+        <th scope="row"></th>
+        <td>{{ staff.attaque }}</td>
+        <td>{{ staff.payer }}</td>
+        <td>{{ staff.date }}</td>
+        <td>
+        {% for consommable in staff.consomable.all %}
+          {{ consommable.name }},
+        {% endfor %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

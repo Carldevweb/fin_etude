@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1> Utilise ton drapeau</h1>
+<details role="list">
+  <summary aria-haspopup="listbox">Choix des consommables</summary>
+  
+    <ul role="listbox">
+      <li>
+        <label>
+          <input type="checkbox">
+          {{ consomables.PAIN_AU_CHOCOLAT }}
+          {{ consomables.CROISSANT }}
+          {{ consomables.JUS_ORANGE }}
+          {{ consomables.JUS_POMME }}
+          {{ consomables.CAFE }}
+        </label>
+      </li>
+    </ul>
+    
+</details>
+  <details role="list">
+    <summary aria-haspopup="listbox">Choix de la victime</summary>
+    <ul role="listbox">
+      
+      <li>
+        <label>
+          <input type="checkbox">
+          
+        </label>
+      </li>
+      
+    </ul>
+  </details>
+  <label for="date">Date du petit déjeuner 
+    <input type="date" id="date" name="date">
+  </label>
+  <label for="time">Heure du petit déjeuner 
+    <input type="time" id="time" name="time">
+  </label>
+  
+<input type="submit">
+  
+{% endblock%}

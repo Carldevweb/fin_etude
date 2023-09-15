@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<article>
+  <div>
+      {% if user.picture %}
+      <img class="img" src="{{ user.picture.url }}" alt="Tomorrow user ">
+      {% endif %}
+      <h3>{{ user.user.first_name }}</h3>
+    <ul>
+      <li>Nom : {{ user.user.first_name  }}</li>
+      <li>Prénom : {{ user.user.last_name }}</li>
+      <li>Attaque réussi : {{ attack_infos.attack_reussi }}</li>
+      <li>Attaque échoué : {{ attack_infos.attack_echoue }}</li>
+      <li>Palme d'or : {{ compteurs }}</li>
+      <li>Palme petit déj : {{ compteurs }}</li>
+    </ul>    
+  </div>
+</article>
+{% endblock content %}
